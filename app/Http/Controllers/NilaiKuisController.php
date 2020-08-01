@@ -26,21 +26,10 @@ class NilaiKuisController extends Controller
 
         $userScore = DB::select(
             'SELECT
-                usc.id,
-                us.name,
-                so.soal,
-                usc.score,
-                usc.created_at,
-                usc.updated_at
+            *
             FROM
-                user_scores as usc,
-                users as us,
-                soals as so
+                show_score
             WHERE
-                usc.id_users = us.id
-                AND
-                usc.id_soals = so.id
-                AND
                 id_users =
                 ' . $id_users
         );
@@ -55,7 +44,9 @@ class NilaiKuisController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'kuis Found',
-                'data' => $userScore
+                'data' => [
+                    'scores' => $userScore
+                ]
             ], 201);
         }
     }

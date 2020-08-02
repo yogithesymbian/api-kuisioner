@@ -36,3 +36,5 @@ $router->post('/show-kuis-detail', 'KuisController@showKuisDetail');
 // NILAI KUIS
 $router->post('/after-kuis', 'NilaiKuisController@insert');
 $router->post('/nilai-kuis', 'NilaiKuisController@showNilai');
+
+$router->get('/home', 'KuisController@home');

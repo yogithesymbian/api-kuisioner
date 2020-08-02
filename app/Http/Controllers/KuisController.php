@@ -17,6 +17,14 @@ class KuisController extends Controller
     {
         $this->middleware('auth');
     }
+    public function home()
+    {
+        return response()->json([
+            'success' => false,
+            'title' => 'Welcome'
+            'message' => 'hello world',
+        ], 201);
+    }
 
     public function showKuisDetail(Request $request)
     {

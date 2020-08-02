@@ -31,7 +31,7 @@ class NilaiKuisController extends Controller
                 show_score
             WHERE
                 id_users =
-                ' . $id_users
+                ' . $id_users . ' ORDER BY id DESC'
         );
 
         if (!$userScore) {

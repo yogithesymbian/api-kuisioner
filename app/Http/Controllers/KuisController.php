@@ -21,8 +21,8 @@ class KuisController extends Controller
     {
         return response()->json([
             'success' => false,
-            'title' => 'Welcome'
-            'message' => 'hello world',
+            'title' => 'Welcome',
+            'message' => 'hello world'
         ], 201);
     }
 
